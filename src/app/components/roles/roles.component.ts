@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IRole } from '../model/interface/role';
+import { IRole } from '../../model/interface/role';
 import { CommonModule } from '@angular/common';
+import { MasterService } from '../../services/master.service';
 
 @Component({
   selector: 'app-roles',
@@ -14,14 +14,17 @@ export class RolesComponent implements OnInit {
   // firstName:string = 'akash';
   // age:number = 28;
   // currentDate:Date = new Date();
-  roleList: IRole[] = [];
-  http = inject(HttpClient)
-  ngOnInit(): void {
-    this.getAllRoles()
-  }
 
-  getAllRoles() {
-    this.http.get('https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles').subscribe((res: any) => {
+  // new way of inject
+  masterService = inject(MasterService);
+
+  // this is dependency injection
+  // constructor(masterService:MasterService){
+
+  // }
+  roleList: IRole[] = [];
+  ngOnInit(): void {
+   this.masterService.getRoles().subscribe((res:any) => {
       this.roleList = res.data
     })
   }
