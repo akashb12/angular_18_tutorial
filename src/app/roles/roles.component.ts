@@ -11,4 +11,11 @@ export class RolesComponent {
   firstName:string = 'akash';
   age:number = 28;
   currentDate:Date = new Date();
+
+  showWelcomeMessage() {
+    alert("welcome to angular 18 tutorial")
+  }
+  showAlertMessage(message:string) {
+    alert(message)
+  }
 }

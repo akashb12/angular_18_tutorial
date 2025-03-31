@@ -24,4 +24,12 @@
     <div class="col-3">
         <input type="text" class="form-control" [(ngModel)] = "firstName">
     </div>
+
+    <!-- event binding -->
+    <div class="col-3">
+        <button type="button" (click)="showWelcomeMessage()">Welcome Button</button>
+    </div>
+    <div class="col-3">
+        <button type="button" (click)="showAlertMessage('hello')">Alert Button</button>
+    </div>
 </div>
