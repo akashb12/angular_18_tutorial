@@ -1,6 +1,6 @@
 <p>roles works!</p>
 <!-- interpolation binding -->
-<div class="row">
+<!-- <div class="row">
     <div class="col-3">
         <h1>{{firstName}}</h1>
     </div>
@@ -10,26 +10,34 @@
     <div class="col-3">
         <h3>{{currentDate}}</h3>
     </div>
-</div>
+</div> -->
 
 
 
-<div class="row">
+<!-- <div class="row"> -->
     <!-- property binding -->
-    <div class="col-3">
+    <!-- <div class="col-3">
         <input type="text" class="form-control" [value]="firstName">
-    </div>
+    </div> -->
 
     <!-- two way binding -->
-    <div class="col-3">
+    <!-- <div class="col-3">
         <input type="text" class="form-control" [(ngModel)] = "firstName">
-    </div>
+    </div> -->
 
     <!-- event binding -->
-    <div class="col-3">
+    <!-- <div class="col-3">
         <button type="button" (click)="showWelcomeMessage()">Welcome Button</button>
     </div>
     <div class="col-3">
         <button type="button" (click)="showAlertMessage('hello')">Alert Button</button>
+    </div> -->
+<!-- </div> -->
+
+<div class="row">
+    <div class="col-4">
+        <ul>
+            <li *ngFor="let roleData of roleList">{{roleData.role}}</li>
+        </ul>
     </div>
 </div>
