@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn" [ngClass]="currentComponent == 'roles' ? 'btn-primary' : 'btn-secondary'" (click)="selectComponent('roles')">Roles</button>
+            <button type="button" class="btn" [ngClass]="currentComponent == 'designation' ? 'btn-primary' : 'btn-secondary'" (click)="selectComponent('designation')">Designation</button>
+          </div>
+    </div>
+    <!-- structural directives -->
+    <div class="col-12" *ngIf="currentComponent == 'roles'">
+        <app-roles></app-roles>
+    </div>
+    <div class="col-12" *ngIf="currentComponent == 'designation'">
+        <app-designation></app-designation>
+    </div>
+</div>
